@@ -1,1 +1,25 @@
-# Wrist-Line-Detection-and-Recognition
+# Deep Learning based Contactless Biometric Recognition using Bracelet Lines
+The paper is published in 2023 IEEE 8th International Conference for Convergence in Technology (I2CT).
+https://www.researchgate.net/publication/367655382_Deep_Learning_based_Contactless_Biometric_Recognition_using_Bracelet_Lines
+
+# Introduction
+Biometrics has always been an essential component for the identification of a personnel in every sector, even devices such as smartphones, and smart devices use it these days. Numerous methods have been implemented for biometric identification over the years, such as biometrics using fingerprint recognition, facial recognition and even using the finger knuckles. Contactless Biometrics has been more prevalent over the recent years due to the Covid Pandemic but has paved the way for more efficient and effective biometric systems. Project considers for using the Bracelet lines on the wrist to identify a person. Applying the YOLO model for the detection of wrists along with Machine Learning Techniques for recognition. The system is created using an Arduino Uno paired with Esp32 CAM for clicking and sending the photo of the user to the server for identification. The simulation results show that the proposed work is efficient enough to provide real-time recognition of the user.
+
+# Motivation
+With COVID-19 still at large, established business practices are changing. Lots of businesses utilize biometric authentication technology to verify the identities of clients and customers. Biometric authentication is a security process that uses the unique biological characteristics of an individual to verify their identity. After COVID-19, these businesses are in search of contactless methods of authentication. For example, in our college there is biometric thumbprint authentication. Due to COVID-19 there was a threat of virus transfer using traditional methods. Choosing wrist lines specially was a way of exploring new unique body parts for biometric identification. Detecting wrist lines from a distance is much easier than detecting fingerprints.
+ 
+# Technology Used
+a)	Internet of Things: For the prototyping setup, the ESP32-CAM is connected with the Arduino Uno R3, where the Arduino is a dummy microcontroller along with ESP32-CAM which is, in turn, a dummy microcontroller while the IDE loads the code. Next, the Arduino IDEs serial monitor can be used to get the generated URL from the ESP32-CAM, which is used to see the image, this can be adjusted to send it to the server. Arduino also acts as a constant power source for the ESP32-CAM. The ESP32-CAM sends the data to the server through Wi-Fi connectivity where further processing and recognition are done on the image.
+
+b)	Machine Learning and Deep Learning: For the proposed work, over 1400+ images of both the wrists of people were taken so that detection and recognition techniques can be performed. The dataset consisted of multiple age groups of people, ranging from 15- year-old to 60-year-old people. The collected data samples are fed to the Yolov5 model for detecting bracelet lines. YOLOv5 is customised in this project to only identify bracelet lines and no other objects. The YOLOv5 model is provided with our dataset of images of hands and their corresponding wrist labels for training and testing. Once the wrist is identified, it is cropped and sent to machine learning models for recognition. List of machine learning models which are used in project are given below:
+•	Logistic Regression
+•	Support Vector Machine
+•	Gaussian Naïve Bayes Classifier
+•	K-Nearest Neighbour
+•	Decision Tree
+•	Random Forest
+After applying the following machine learning models, we were getting an accuracy of around 80-90 percent. To obtain more accuracy we applied deep learning model on our dataset. We got an accuracy of 98 percent with convolutional neural network model. 
+
+# Result
+All seven algorithms show a decent performance and give a comparable value for all the measures. CNN performs slightly better than the other algorithms. Random forest gives less accuracy than CNN but by increasing the depth of the tree we can increase its accuracy. KNN, SVM and Logistic Regression give a close value for all four parameters. Gaussian Naive Bayes classifier gives a slightly lesser accuracy. The decision tree performs the lowest of all the algorithms.
+The study of human bracelet line detection and recognition has many applications. Different body parts can be used for personal identification like veins, fingerprints, palmprints etc. In the project, bracelet lines were used for the data collection. The images of the wrists of over 85 people were taken. The YOLOv5 detection algorithm is considered as it is the most recent and gives phenomenal results. As much work is not done in the field of recognition using bracelet lines so we used several machine learning algorithms to see which gives the better result. Convolutional Neural Networks give the highest result in all 4 parameters, i.e., accuracy, precision, recall and f1-score.
